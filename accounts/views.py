@@ -75,7 +75,7 @@ def user_login(request):
         password = request.POST.get('password')
         user = User.objects.get(email__iexact=email)
         if not user:
-            return HttpResponse("user not exist")
+            return HttpResponse("user not found")
         if user and user.check_password(password):
             if user:
                 if user.is_active:
@@ -83,7 +83,7 @@ def user_login(request):
                     next = request.POST.get('next', '/')
                     return HttpResponseRedirect(next)
                 else:
-                    return HttpResponse("Your account was inactive.")
+                    return HttpResponse("Account was inactive.")
             else:
                 print("Someone tried to login and failed.")
                 print("They used username: {} and password: {}".format(email, password))
@@ -127,7 +127,7 @@ def warn(request):
     context = {
         'cancel': 'accounts:my_profile',
         'delete': 'accounts:delete_account',
-        'msg': 'Are you sure you want to delete your account ? All your projects and donations will be deleted',
+        'msg': 'Are want to delete your account ? All your projects and donations will be deleted',
         'cancel_id': request.user.id,
         'delete_id': request.user.id,
     }

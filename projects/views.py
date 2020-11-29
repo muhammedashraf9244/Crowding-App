@@ -208,21 +208,21 @@ def create(request):
                         contextpost = {
                             'form': form,
                             'category': category,
-                            'done': "broject has been created and picture saved"
+                            'done': "u Created a project"
                         }
                         return render(request, 'projects/create.html', contextpost)
                     else:
                         contextpost = {
                             'form': form,
                             'category': category,
-                            'done': "broject has been created and picture dose not saved"
+                            'done': "u Created a project"
                         }
             return render(request, 'projects/create.html', contextpost)
         else:
             contextpost = {
                 'form': form,
                 'category': category,
-                'done': "noooooooooooooooooooooooo"
+                'done': "no"
             }
             return render(request, 'projects/create.html', contextpost)
         # return HttpResponse(form.fields)
