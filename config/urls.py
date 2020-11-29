@@ -27,5 +27,5 @@ urlpatterns = [
     path('projects/', include('projects.urls')),
     path('favicon.ico', RedirectView.as_view(url='/static/favicon.ico')),
     path('accounts/', include('accounts.urls', namespace='accounts')),
-    #url(r'^ratings/', include('star_ratings.urls', namespace='ratings')),
+    url(r'^ratings/', include('star_ratings.urls', namespace='ratings')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + staticfiles_urlpatterns()
