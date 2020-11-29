@@ -39,7 +39,8 @@ INSTALLED_APPS = [
   'django.contrib.sites',
   'pages.apps.PagesConfig',
   'projects.apps.ProjectsConfig',
-  'taggit'
+  'taggit',
+  'star_ratings'
 ]
 
 MIDDLEWARE = [
@@ -79,8 +80,8 @@ DATABASES = {
   'default': {
     'ENGINE': 'django.db.backends.postgresql_psycopg2',
     'NAME': 'team_iti',
-    'USER': 'postgres',
-    'PASSWORD': '9244.9244',
+    'USER': 'hossam',
+    'PASSWORD': 'eagleaero1864',
     'HOST': 'localhost',
     'PORT': '5432',
   }
